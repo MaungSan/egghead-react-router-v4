@@ -1,15 +1,16 @@
 {
-  "name": "egghead-react-router-v4",
-  "version": "0.1.0",
-  "private": true,
-  "devDependencies": {
-    "react-scripts": "0.9.0"
-  },
+  "name": "new",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "src/index.js",
   "dependencies": {
     "react": "16.4.2",
     "react-dom": "16.4.2",
-    "react-router-dom": "4.3.1"
+    "react-router-dom": "4.3.1",
+    "react-scripts": "1.1.4"
   },
+  "devDependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

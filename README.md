@@ -4,4 +4,4 @@ React Router v4 takes an entirely new approach to routing and handling URLs in y
 In this course, you will learn about the basics of React Router v4 to help you get started. We will look at the core components that React Router supplies and how they interact together to create a robust routing solution for your React applications.
 
 ## NOTE:
-All examples can be found in `src/lessons/{:lesson}`
+The individual lessons are now independent folders and compatible with CodeSandbox
