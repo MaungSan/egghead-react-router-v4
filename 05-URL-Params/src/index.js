@@ -6,7 +6,10 @@ const App = props => (
   <Router basename={props.path}>
     <div>
       <Route
-        path="/:page?-:subpage?"
+        // change path to /:page?-:subpage?
+        // to allow for dashes in url 
+        // example: /react-router
+        path="/:page?/:subpage?"
         render={({ match }) => (
           <h1>
             PAGE: {match.params.page || "Home"}

@@ -6,6 +6,8 @@ const App = props => (
   <Router basename={props.path}>
     <div>
       <Route
+        // must enter date and domain name
+        // example: /07-05-2018.hmtl
         path="/:a(\d{2}-\d{2}-\d{4}):b(\.[a-z]+)"
         render={({ match }) => (
           <h1>
