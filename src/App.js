@@ -1,51 +1,59 @@
-import React from 'react';
-import './App.css';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import "./App.css";
 
 const lessons = [
-  {id: '01-Router'},
-  {id: '02-Link'},
-  {id: '03-NavLink'},
-  {id: '04-URL-Params'},
-  {id: '05-URL-Regex'},
-  {id: '06-Query-Params'},
-  {id: '07-Catch-All'},
-  {id: '08-Conditional'},
-  {id: '09-Multiple'},
-  {id: '10-Nested'},
-  {id: '11-Redirect'},
-  {id: '12-Prompt'},
-  {id: '13-Routers'}
-]
+  { id: "01-02-Router" },
+  { id: "03-LInk" },
+  { id: "04-NavLink" },
+  { id: "05-URL-Params" },
+  { id: "06-URL-Regex" },
+  { id: "07-Query-Params" },
+  { id: "08-Catch-All" },
+  { id: "09-Conditional" },
+  { id: "10-Multiple" },
+  { id: "11-Nested" },
+  { id: "12-Redirect" },
+  { id: "13-Prompt" },
+  { id: "14-Routers" },
+  { id: "react-router4" }
+];
 
-lessons.forEach(l => l.Component =  require(`./lessons/${l.id}/App`).default)
-const Links = () =>
-    <ul className="lesson-nav">
-          {lessons.map((l, i) => (
-            <li key={l.id}><Link to={`/lessons/${l.id}`}>{l.id}</Link></li>
-          ))}
-    </ul>
+lessons.forEach(l => (l.Component = require(`../${l.id}/src/`).default));
+const Links = () => (
+  <ul className="lesson-nav">
+    {lessons.map((l, i) => (
+      <li key={l.id}>
+        <Link to={`/lessons/${l.id}`}>{l.id}</Link>
+      </li>
+    ))}
+  </ul>
+);
 
-const Back = () => <div style={{marginBottom: 64}}><Link to="/">&larr;Back to lessons</Link></div>
+const Back = () => (
+  <div style={{ marginBottom: 64 }}>
+    <Link to="/">&larr;Back to lessons</Link>
+  </div>
+);
 
 class App extends React.Component {
-  render(){
+  render() {
     return (
       <Router>
         <div>
-          <Route exact path="/" component={Links}></Route>
-          <Route path="/lessons" component={Back}></Route>
-         {lessons.map(({id, Component}) => (
-            <Route key={id} path={`/lessons/${id}`} render={({match}) => <Component {...match}/>} />
+          <Route exact path="/" component={Links} />
+          <Route path="/lessons" component={Back} />
+          {lessons.map(({ id, Component }) => (
+            <Route
+              key={id}
+              path={`/lessons/${id}`}
+              render={({ match }) => <Component {...match} />}
+            />
           ))}
         </div>
       </Router>
-    )
+    );
   }
 }
 
